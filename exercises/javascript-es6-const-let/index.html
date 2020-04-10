@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript ES6 - Const and Let</title>
+</head>
+<body>
+  <script>
+    var greetings = [
+      "hello!",
+      "konichiwa!",
+      "nihao",
+      "bonjour",
+      "gutten tag",
+      "ola"
+    ]
+    function helloWorld(arr){
+      var i = 0;
+      while(i < arr.length) {
+        console.log(arr[i]);
+        i++
+      }
+    }
+    helloWorld(greetings);
+    function getRandomGreeting() {
+      var randomNumber = Math.floor(Math.random() * greetings.length);
+      var greeting = greetings[randomNumber];
+      if(randomNumber === 1) {
+      var greeting = greeting + ' is a japanese greeting.'
+      }
+        console.log(greeting);
+    }
+    getRandomGreeting();
+    function addToGreetings(greet) {
+      greetings.push(greet);
+    }
+    addToGreetings("namaste");
+    helloWorld(greetings);
+
+    console.log("This variable is currently undefined due to hoisting, please fix: ", variable);
+
+    var variable = "meow";
+  </script>
+</body>
+</html>
