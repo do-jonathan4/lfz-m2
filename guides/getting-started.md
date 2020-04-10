@@ -1,26 +1,26 @@
 Getting Started
 --
 
-To get started, you'll be creating a fork of the `Learning-Fuze/lfz-lessons` repository and cloning **the fork** to your local machine.
+To get started, you'll be creating a fork of the `Learning-Fuze/lfz-mod-2-lessons` repository and cloning **the fork** to your local machine.
 
 ### Fork the Repository on GitHub
 
-Visit the [`Learning-Fuze/lfz-lessons`](https://github.com/Learning-Fuze/lfz-lessons) GitHub repository and click the **Fork** button. GitHub will create a copy of the repository under your own account.
+Visit the [`Learning-Fuze/lfz-mod-2-lessons`](https://github.com/Learning-Fuze/lfz-mod-2-lessons) GitHub repository and click the **Fork** button. GitHub will create a copy of the repository under your own account.
 
 ### Clone Your Fork from GitHub
 
 1. In your terminal, navigate to your `lfz/` directory.
-2. Visit your fork of the `lfz-lessons` repository on GitHub and copy its URL.
+2. Visit your fork of the `lfz-mod-2-lessons` repository on GitHub and copy its URL.
 3. Use `git clone` to clone your fork into your local `lfz` directory.
 
 ### Add the LearningFuze Upstream Repository
 
-Occasionally, updates to these lessons will be made available by instructors. Adding the original `Learning-Fuze/lfz-lessons` to your local repo's remotes will make receiving the updates easy.
+Occasionally, updates to these lessons will be made available by instructors. Adding the original `Learning-Fuze/lfz-mod-2-lessons` to your local repo's remotes will make receiving the updates easy.
 
-1. In your terminal, navigate to your `lfz-lessons` repository.
-2. Run the following command to add the original `Learning-Fuze/lfz-lessons` as a remote repository named `upstream`.
+1. In your terminal, navigate to your `lfz-mod-2-lessons` repository.
+2. Run the following command to add the original `Learning-Fuze/lfz-mod-2-lessons` as a remote repository named `upstream`.
     ```bash
-    git remote add upstream https://github.com/Learning-Fuze/lfz-lessons
+    git remote add upstream https://github.com/Learning-Fuze/lfz-mod-2-lessons
     ```
 3. Run the following command to confirm that `upstream` was added to your local repository.
     ```bash
@@ -30,15 +30,15 @@ Occasionally, updates to these lessons will be made available by instructors. Ad
 It should print out two remote repositories like so:
 
 ```
-origin	https://github.com/your-username/lfz-lessons.git (fetch)
-origin	https://github.com/your-username/lfz-lessons.git (push)
-upstream	https://github.com/Learning-Fuze/lfz-lessons.git (fetch)
-upstream	https://github.com/Learning-Fuze/lfz-lessons.git (push)
+origin	https://github.com/your-username/lfz-mod-2-lessons.git (fetch)
+origin	https://github.com/your-username/lfz-mod-2-lessons.git (push)
+upstream	https://github.com/Learning-Fuze/lfz-mod-2-lessons.git (fetch)
+upstream	https://github.com/Learning-Fuze/lfz-mod-2-lessons.git (push)
 ```
 
 ### Install JavaScript Dependencies.
 
-Some exercises use Node.js to check your code before you turn them in. Run the following command in the root of your `lfz-lessons` directory:
+Some exercises use Node.js to check your code before you turn them in. Run the following command in the root of your `lfz-mod-2-lessons` directory:
 
 ```bash
 npm install

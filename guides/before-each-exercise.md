@@ -5,7 +5,7 @@ When you are about to begin an exercise, make sure that your local files are up-
 
 If you get stuck while creating a new branch, be sure to notify an instructor right away.
 
-1. In your terminal, navigate to your `lfz-lessons` directory.
+1. In your terminal, navigate to your `lfz-mod-2-lessons` directory.
 2. Check `git status` to ensure that you don't have any uncommitted changes. You should have nothing to commit and a **clean working tree before continuing**.
     ```bash
     git status
