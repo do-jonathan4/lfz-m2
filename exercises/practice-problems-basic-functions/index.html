@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>String Return</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.min.css">
+  <style>
+    #mocha h1 {
+      font-size: 1.5rem;
+    }
+    #mocha h2 {
+      font-size: 1rem;
+    }
+    #mocha-stats,
+    #mocha .test pre {
+      font-size: 1rem;
+    }
+    #page-title {
+      font-size: 2rem !important;
+    }
+    body,
+    #mocha {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="mocha">
+    <h1 id="page-title">String Return</h1>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/7.4.2/sinon.js"></script>
+  <script>
+    var expect = chai.expect;
+    mocha.setup('bdd');
+  </script>
+  <script src="src/returnString.js"></script>
+  <script src="src/returnString.test.js"></script>
+  <script src="src/favoriteFood.js"></script>
+  <script src="src/favoriteFood.test.js"></script>
+  <script src="src/favoriteMovie.js"></script>
+  <script src="src/favoriteMovie.test.js"></script>
+  <script src="src/favoriteSong.js"></script>
+  <script src="src/favoriteSong.test.js"></script>
+  <script src="src/favoriteActivity.js"></script>
+  <script src="src/favoriteActivity.test.js"></script>
+  <script src="src/addNumbers.js"></script>
+  <script src="src/addNumbers.test.js"></script>
+  <script src="src/multiplyNumbers.js"></script>
+  <script src="src/multiplyNumbers.test.js"></script>
+  <script src="src/addAndSquareNumbers.js"></script>
+  <script src="src/addAndSquareNumbers.test.js"></script>
+  <script src="src/findRightTriangleArea.js"></script>
+  <script src="src/findRightTriangleArea.test.js"></script>
+  <script src="src/generateMathSentence.js"></script>
+  <script src="src/generateMathSentence.test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>
