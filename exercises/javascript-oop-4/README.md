@@ -1,4 +1,4 @@
-# JavaScript-OOP-4
+# javascript-oop-4
 
 Intro to constructor functions in Object Oriented JavaScript
 

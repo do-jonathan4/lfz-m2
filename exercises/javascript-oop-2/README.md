@@ -1,4 +1,4 @@
-# JavaScript-OOP-2
+# javascript-oop-2
 
 Intro to using this in Object Oriented JavaScript
 

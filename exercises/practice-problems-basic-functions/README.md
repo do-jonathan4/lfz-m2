@@ -1,4 +1,4 @@
-# Practice Problem Basic Functions
+# practice-problems-basic-functions
 
 The objective of this first practice problem is to get used to the testing suite interface, and to begin to develop the skills of breaking down problems so that they can be solved. This ability to break down problems into small solvable pieces is a skill that can only be developed with practice, as you literally have to create new neuro-pathways in the brain. But don't worry, this problem and the ones which follow are designed to help you do just that.
 

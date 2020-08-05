@@ -1,4 +1,4 @@
-# ajax
+# jquery-ajax-2
 
 Using `ajax` to send HTTP requests from the browser along with JS Dom Creation.
 

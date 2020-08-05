@@ -1,4 +1,4 @@
-# JavaScript OOP Parent Child 2
+# javascript-oop-parent-child-2
 
 Now that you have an understanding of instantiating objects as children of other objects, it is time to develop the next skill which is very important in OOP, communication between objects through callback functions!
 

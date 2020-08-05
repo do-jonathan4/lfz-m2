@@ -1,4 +1,4 @@
-# sql-join-and-alias
+# sql-join-exercise
 
 Get related data from two or more tables using `join` in your `select` statements.
 

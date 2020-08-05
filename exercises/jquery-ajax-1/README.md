@@ -1,4 +1,4 @@
-# ajax
+# jquery-ajax-1
 
 Using `ajax` to send HTTP requests from the browser.
 

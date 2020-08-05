@@ -1,4 +1,4 @@
-# JavaScript-OOP-5
+# javascript-oop-5
 
 Intro to Classes in Object Oriented JavaScript
 
