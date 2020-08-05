@@ -1,0 +1,27 @@
+body {
+  background-image: url(../images/parking-lot.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #808080;
+  margin: 0;
+}
+.car {
+  position: absolute;
+  width: 200px;
+  transition: transform 250ms ease;
+}
+.car.north {
+  transform: rotate(-90deg);
+}
+
+.car.south {
+  transform: rotate(90deg)
+}
+
+.car.east {
+  transform: rotate(0deg);
+}
+
+.car.west {
+  transform: rotate(180deg);
+}
