@@ -1,4 +1,4 @@
-# JavaScript-OOP-1
+# javascript-oop-1
 
 Intro to using methods in Object Oriented JavaScript
 

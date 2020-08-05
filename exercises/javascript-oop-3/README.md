@@ -1,4 +1,4 @@
-# JavaScript-OOP-3
+# javascript-oop-3
 
 Intro to prototypes in Object Oriented JavaScript
 

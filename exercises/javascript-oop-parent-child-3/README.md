@@ -1,4 +1,4 @@
-# JavaScript OOP Parent Child 3
+# javascript-oop-parent-child-3
 
 Now that you are able to instantiate child objects and pass them callback functions to allow intra-object communication, it is time for another important feature of OOP, multiple files!
 

@@ -1,4 +1,4 @@
-# JavaScript OOP Parent Child 1
+# javascript-oop-parent-child-1
 
 Instantiation of objects (and how to use instantiation to create familial relationships between objects) is a tricky part of understanding OOP.
 
