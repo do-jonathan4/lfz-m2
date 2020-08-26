@@ -23,4 +23,4 @@ Practice problems should be worked on throughout this Module
 
 ## Instructors
 
-For information regarding the `lfz-mod-2-lessons` repository including lesson plans and reference solutions, see the [`lfz-solutions`](https://github.com/Learning-Fuze/lfz-mod-2-solutions) submodule.
+For information regarding the `lfz-mod-2-lessons` repository including lesson plans and reference solutions, see the [`lfz-mod-2-solutions`](https://github.com/Learning-Fuze/lfz-mod-2-solutions) submodule.
