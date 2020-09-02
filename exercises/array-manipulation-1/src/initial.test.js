@@ -1,4 +1,4 @@
-/* global expect, sinon, initial */
+/* global expect, ban, initial */
 
 describe('initial(array)', function () {
 

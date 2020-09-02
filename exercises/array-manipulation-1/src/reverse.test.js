@@ -1,4 +1,4 @@
-/* global expect, sinon, reverse */
+/* global expect, ban, reverse */
 
 describe('reverse(array)', function () {
 

@@ -1,4 +1,4 @@
-/* global expect, sinon, tail */
+/* global expect, ban, tail */
 
 describe('tail(array)', function () {
 

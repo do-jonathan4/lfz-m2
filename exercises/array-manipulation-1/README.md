@@ -64,7 +64,7 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
 
 1. ### `tail(array)`
 
-    🚨 **Do not use `Array.prototype.slice()` or `Array.prototype.splice()` in your implementation of `tail`.**
+    🚨 **Do not use `slice()`, `splice()`, `pop()`, or `shift()` in your implementation of `tail`.**
 
     #### Parameters
 
@@ -85,7 +85,7 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
 
 1. ### `initial(array)`
 
-    **Do not use `Array.prototype.slice()` or `Array.prototype.splice()` in your implementation of `initial`.**
+    🚨 **Do not use `slice()`, `splice()`, `pop()`, or `shift()` in your implementation of `initial`.**
 
     #### Parameters
 
