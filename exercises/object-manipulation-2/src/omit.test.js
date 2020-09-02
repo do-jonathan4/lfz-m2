@@ -1,13 +1,13 @@
 /* global omit, expect */
 
-describe('omit(source, keys)', () => {
+describe('omit(source, keys)', function () {
 
-  beforeEach(() => {
+  beforeEach(function () {
     expect(omit).to.be.a('function');
   });
 
-  it('creates an object without the listed keys', () => {
-    const testCases = [
+  it('creates an object without the listed keys', function () {
+    var testCases = [
       [
         { foo: 1, bar: 2, baz: 3 },
         ['foo', 'baz'],
@@ -25,9 +25,9 @@ describe('omit(source, keys)', () => {
       ]
     ];
     for (let i = 0; i < testCases.length; i++) {
-      const [source, keys, expected] = testCases[i];
-      const frozen = Object.freeze(source);
-      const actual = omit(frozen, keys);
+      var [source, keys, expected] = testCases[i];
+      var frozen = Object.freeze(source);
+      var actual = omit(frozen, keys);
       expect(actual).to.deep.equal(expected);
     }
   });

@@ -1,18 +1,18 @@
 /* global invert, expect */
 
-describe('invert(source)', () => {
+describe('invert(source)', function () {
 
-  beforeEach(() => {
+  beforeEach(function () {
     expect(invert).to.be.a('function');
   });
 
-  it('inverts a person object', () => {
-    const person = {
+  it('inverts a person object', function () {
+    var person = {
       age: NaN,
       occupation: 'programmer',
       language: 'JavaScript'
     };
-    const inverted = invert(person);
+    var inverted = invert(person);
     expect(inverted).to.deep.equal({
       NaN: 'age',
       programmer: 'occupation',
@@ -20,13 +20,13 @@ describe('invert(source)', () => {
     });
   });
 
-  it('inverts a transaction object', () => {
-    const transaction = {
+  it('inverts a transaction object', function () {
+    var transaction = {
       accountId: 'axbxcx',
       amount: 1000,
       type: 'withdrawal'
     };
-    const inverted = invert(transaction);
+    var inverted = invert(transaction);
     expect(inverted).to.deep.equal({
       axbxcx: 'accountId',
       1000: 'amount',
@@ -34,14 +34,14 @@ describe('invert(source)', () => {
     });
   });
 
-  it('inverts a pet object', () => {
-    const pet = {
+  it('inverts a pet object', function () {
+    var pet = {
       name: 'ada',
       type: 'cat',
       breed: 'bengal',
       age: 1.5
     };
-    const inverted = invert(pet);
+    var inverted = invert(pet);
     expect(inverted).to.deep.equal({
       ada: 'name',
       cat: 'type',
@@ -50,9 +50,9 @@ describe('invert(source)', () => {
     });
   });
 
-  it('does nothing with an empty object', () => {
-    const empty = {};
-    const inverted = invert(empty);
+  it('does nothing with an empty object', function () {
+    var empty = {};
+    var inverted = invert(empty);
     expect(inverted).to.deep.equal({});
   });
 

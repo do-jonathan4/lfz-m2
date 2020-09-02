@@ -1,13 +1,13 @@
 /* global pick, expect */
 
-describe('pick(source, keys)', () => {
+describe('pick(source, keys)', function () {
 
-  beforeEach(() => {
+  beforeEach(function () {
     expect(pick).to.be.a('function');
   });
 
-  it('creates an object with only the listed keys', () => {
-    const testCases = [
+  it('creates an object with only the listed keys', function () {
+    var testCases = [
       [
         { foo: 1, bar: 2, baz: 3 },
         ['foo', 'baz'],
@@ -22,12 +22,17 @@ describe('pick(source, keys)', () => {
         { bar: 2 },
         ['foo', 'bar', 'baz'],
         { bar: 2 }
+      ],
+      [
+        { foo: null, bar: 0, baz: undefined },
+        ['foo', 'bar', 'baz'],
+        { foo: null, bar: 0 }
       ]
     ];
     for (let i = 0; i < testCases.length; i++) {
-      const [source, keys, expected] = testCases[i];
-      const frozen = Object.freeze(source);
-      const actual = pick(frozen, keys);
+      var [source, keys, expected] = testCases[i];
+      var frozen = Object.freeze(source);
+      var actual = pick(frozen, keys);
       expect(actual).to.deep.equal(expected);
     }
   });

@@ -8,7 +8,6 @@ Be sure to check out a new branch (from `master`) for this exercise. Detailed in
 
 ### Exercise
 
-
 For this exercise you will be implementing several generic object manipulation functions. You are given a description of each function, a suite of unit tests for each function, and an empty JavaScript file in which to write your implementation.
 
 Your goal is to define each function according to its description, such that all of its tests pass.
@@ -20,6 +19,8 @@ Open `src/pick.js` and `src/pick.test.js` in your code editor and skim the code 
 1. ### `pick(source, keys)`
 
     Creates an object composed of the picked `source` properties.
+
+    #### 🚨 Constraints 🚨
 
     #### Parameters
 
@@ -40,7 +41,7 @@ Open `src/pick.js` and `src/pick.test.js` in your code editor and skim the code 
 
 1. ### `omit(source, keys)`
 
-    The opposite of `pick`; this method creates an object composed of properties of `source` not listed in `keys`
+    The opposite of `pick`; this method creates an object composed of properties of `source` not listed in `keys`.
 
     #### Parameters
 
