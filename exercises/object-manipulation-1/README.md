@@ -4,7 +4,7 @@ JavaScript object manipulation practice with unit tests.
 
 ### Before You Begin
 
-Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/array-manipulation-1` directory in your terminal.
+Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/object-manipulation-1` directory in your terminal.
 
 ### Exercise
 
