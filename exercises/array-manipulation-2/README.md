@@ -26,6 +26,8 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `take(array, count)`
 
+    🚨 **Do not mutate the input array!** 🚨
+
     #### Parameters
 
       - `array` - Any JavaScript `Array`
@@ -34,10 +36,6 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
     #### Return Value
 
     A new `Array` containing the first `count` elements of `array`.
-
-    #### CHALLENGE
-
-    **Do not use `Array.prototype.slice` or `Array.prototype.splice` in your implementation.**
 
     #### Examples
 
@@ -54,6 +52,8 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `drop(array, count)`
 
+    🚨 **Do not mutate the input array!** 🚨
+
     #### Parameters
 
       - `array` - Any JavaScript `Array`
@@ -62,10 +62,6 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
     #### Return Value
 
     A new `Array` containing the elements of `array` after the first `count` elements.
-
-    #### CHALLENGE
-
-    **Do not use `Array.prototype.slice` or `Array.prototype.splice` in your implementation.**
 
     #### Examples
 
@@ -82,7 +78,7 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `includes(array, value)` 🚨
 
-    🚨 **Do not use `Array.prototype.includes` in your implementation.**
+    🚨 **Do not use `Array.prototype.includes` in your implementation.** 🚨
 
     #### Parameters
 
@@ -118,6 +114,8 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `takeRight(array, count)`
 
+    🚨 **Do not mutate the input array!** 🚨
+
     #### Parameters
 
       - `array` - Any JavaScript `Array`
@@ -126,10 +124,6 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
     #### Return Value
 
     A new `Array` containing the last `count` elements of `array`.
-
-    #### CHALLENGE
-
-    **Do not use `Array.prototype.slice` or `Array.prototype.splice` in your implementation.**
 
     #### Examples
 
@@ -146,6 +140,8 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `dropRight(array, count)`
 
+    🚨 **Do not mutate the input array!** 🚨
+
     #### Parameters
 
     - `array` - Any JavaScript `Array`
@@ -154,10 +150,6 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
     #### Return Value
 
     A new `Array` containing the elements of `array` before the last `count` elements.
-
-    #### CHALLENGE
-
-    **Do not use `Array.prototype.slice` or `Array.prototype.splice` in your implementation.**
 
     #### Examples
 
@@ -174,6 +166,8 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
 1. ### `chunk(array, size)`
 
+    🚨 **Do not mutate the input array!** 🚨
+
     #### Parameters
 
     - `array` - Any JavaScript `Array`
@@ -185,7 +179,7 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
     #### CHALLENGE
 
-    **Do not use `Array.prototype.slice` or `Array.prototype.splice` in your implementation.**
+    **Do not use `Array.prototype.slice` in your implementation.**
 
     #### Examples
 
