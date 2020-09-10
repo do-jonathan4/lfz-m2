@@ -5,17 +5,19 @@ body {
   background-color: #808080;
   margin: 0;
 }
+
 .car {
   position: absolute;
   width: 200px;
   transition: transform 250ms ease;
 }
+
 .car.north {
   transform: rotate(-90deg);
 }
 
 .car.south {
-  transform: rotate(90deg)
+  transform: rotate(90deg);
 }
 
 .car.east {
