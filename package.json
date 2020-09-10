@@ -6,7 +6,6 @@
   "description": "LearningFuze Part Time Module 2 Lessons and Resources",
   "main": "index.js",
   "scripts": {
-    "create-branches": "./scripts/create-branches.bash",
     "create-exercise": "./scripts/create-exercise.bash",
     "create-solution": "./scripts/create-solution.bash"
   },
