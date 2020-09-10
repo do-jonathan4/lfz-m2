@@ -8,40 +8,44 @@
 </head>
 <body>
   <script>
+    /* eslint-disable no-console, no-use-before-define */
     var greetings = [
-      "hello!",
-      "konichiwa!",
-      "nihao",
-      "bonjour",
-      "gutten tag",
-      "ola"
-    ]
-    function helloWorld(arr){
+      'hello!',
+      'konichiwa!',
+      'nihao',
+      'bonjour',
+      'gutten tag',
+      'ola'
+    ];
+
+    function helloWorld(arr) {
       var i = 0;
-      while(i < arr.length) {
+      while (i < arr.length) {
         console.log(arr[i]);
-        i++
+        i++;
       }
     }
     helloWorld(greetings);
+
     function getRandomGreeting() {
       var randomNumber = Math.floor(Math.random() * greetings.length);
       var greeting = greetings[randomNumber];
-      if(randomNumber === 1) {
-      var greeting = greeting + ' is a japanese greeting.'
+      if (randomNumber === 1) {
+        greeting = greeting + ' is a japanese greeting.';
       }
-        console.log(greeting);
+      console.log(greeting);
     }
     getRandomGreeting();
+
     function addToGreetings(greet) {
       greetings.push(greet);
     }
-    addToGreetings("namaste");
+    addToGreetings('namaste');
     helloWorld(greetings);
 
-    console.log("This variable is currently undefined due to hoisting, please fix: ", variable);
+    console.log('This variable is currently undefined due to hoisting, please fix: ', variable);
 
-    var variable = "meow";
+    var variable = 'meow';
   </script>
 </body>
 </html>
