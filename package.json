@@ -13,6 +13,22 @@
     "create-exercise": "./scripts/create-exercise.bash",
     "create-solution": "./scripts/create-solution.bash"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix"
+    ],
+    "*.html": [
+      "htmlhint"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Learning-Fuze/lfz-mod-2-lessons.git"
