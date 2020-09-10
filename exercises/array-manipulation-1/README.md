@@ -26,6 +26,8 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
 
 1. ### `head(array)`
 
+    🚨 **Do not use `slice()`, `splice()`, `pop()`, or `shift()` in your implementation of `head`.**
+
     #### Parameters
 
       - `array` - Any JavaScript `Array`
@@ -44,6 +46,8 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
     ```
 
 1. ### `last(array)`
+
+    🚨 **Do not use `slice()`, `splice()`, `pop()`, or `shift()` in your implementation of `last`.**
 
     #### Parameters
 
@@ -106,7 +110,7 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
 
 1. ### `reverse(array)`
 
-    **Do not use `Array.prototype.reverse()` in your implementation of `reverse`.**
+    🚨 **Do not use `Array.prototype.reverse()` in your implementation of `reverse`.**
 
     #### Parameters
 
@@ -124,6 +128,10 @@ Open `src/head.js` and `src/head.test.js` in your code editor and skim the code 
     reverse([false, true, false, true]) // -> [true, false, true, false]
     reverse([])                         // -> []
     ```
+
+1. ### `compact(array)`
+
+    **For this function, you'll need to read the tests defined in `src/compact.test.js` to figure out the solution.**
 
 ### Submitting Your Solution
 

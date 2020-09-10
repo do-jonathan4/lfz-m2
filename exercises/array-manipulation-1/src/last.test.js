@@ -1,9 +1,10 @@
-/* global expect, last */
+/* global expect, ban, last */
 
 describe('last(array)', function () {
 
   beforeEach(function () {
     expect(last).to.be.a('function');
+    ban(last, 'slice', 'splice', 'pop', 'shift');
   });
 
   it('returns "baz" for ["foo", "bar", "baz"]', function () {
