@@ -1,12 +1,12 @@
 /* global expect, getStudentNames */
 
+describe('getStudentsNames(array)', function () {
 
-  describe('getStudentsNames(array)', function() {
+  beforeEach(function () {
+    expect(getStudentNames).to.be.a('function');
+  });
 
-    beforeEach(function() {
-      expect(getStudentNames).to.be.a('function');
-    });
-    it(`takes [
+  it(`takes [
       {name: "Robert"},
       {name: "Steve"},
       {name: "Ken"},
@@ -14,35 +14,35 @@
       "Robert",
       "Steve",
       "Ken"
-    ]`, function() {
-        var argument = [
-          { name: "Robert" },
-          { name: "Steve" },
-          { name: "Ken" },
-        ]
-        var output = getStudentNames(argument);
-        expect(output).to.deep.equal(["Robert", "Steve", "Ken"])
-    });
+    ]`, function () {
+    var argument = [
+      { name: 'Robert' },
+      { name: 'Steve' },
+      { name: 'Ken' }
+    ];
+    var output = getStudentNames(argument);
+    expect(output).to.deep.equal(['Robert', 'Steve', 'Ken']);
+  });
 
-    it(`takes [
+  it(`takes [
       {name: "Shrek"},
       {name: "Donkey"}
     ] as an argument and returns [
       "Shrek",
       "Donkey"
-    ]`, function() {
-      var argument = [
-        {name: "Shrek"},
-        {name: "Donkey"}
-      ]
-      var output = getStudentNames(argument);
-      expect(output).to.deep.equal(["Shrek", "Donkey"]);
-    })
+    ]`, function () {
+    var argument = [
+      { name: 'Shrek' },
+      { name: 'Donkey' }
+    ];
+    var output = getStudentNames(argument);
+    expect(output).to.deep.equal(['Shrek', 'Donkey']);
+  });
 
-    it(`takes [] as an argument and returns []`, function() {
-      var argument = [];
-      var output = getStudentNames(argument);
-      expect(output).to.deep.equal([]);
-    })
+  it('takes [] as an argument and returns []', function () {
+    var argument = [];
+    var output = getStudentNames(argument);
+    expect(output).to.deep.equal([]);
+  });
 
-    })
+});
