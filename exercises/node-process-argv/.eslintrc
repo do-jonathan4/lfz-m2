@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["all-arguments.js", "echo.js", "process.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}

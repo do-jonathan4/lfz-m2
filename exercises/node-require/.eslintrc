@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["calculate.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}

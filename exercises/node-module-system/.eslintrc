@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["a-wrapped-module.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}

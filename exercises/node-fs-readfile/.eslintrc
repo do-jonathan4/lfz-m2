@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["read-dijkstra.js", "read-any.js", "cat.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}
