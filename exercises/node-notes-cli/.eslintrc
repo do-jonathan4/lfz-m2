@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["app.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}

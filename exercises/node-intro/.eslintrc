@@ -1,0 +1,10 @@
+{
+    "overrides": [
+        {
+            "files": ["hello-node.js"],
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}
