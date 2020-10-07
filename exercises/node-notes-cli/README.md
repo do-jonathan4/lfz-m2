@@ -19,7 +19,6 @@ Each of these operations will involve some mixture of reading the `data.json` fi
 
 ### Tips
 
-- If you `require()` a `.json` file, Node's module system will automatically parse its contents into JavaScript objects.
 - Use `JSON.stringify(data, null, 2)` to create a JSON string with nice indentation and formatting before writing it back to `data.json`.
 
 ### Demo
