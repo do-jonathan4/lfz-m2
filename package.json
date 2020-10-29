@@ -20,13 +20,13 @@
   },
   "lint-staged": {
     "*.css": [
-      "stylelint --fix"
+      "stylelint"
     ],
     "*.html": [
       "htmlhint"
     ],
     "*.{js,jsx}": [
-      "eslint --fix"
+      "eslint"
     ]
   },
   "repository": {
