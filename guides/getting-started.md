@@ -9,7 +9,7 @@ Visit the [`Learning-Fuze/lfz-mod-2-lessons`](https://github.com/Learning-Fuze/l
 
 ### Clone Your Fork from GitHub
 
-1. In your terminal, navigate to your `lfz/` directory.
+1. In your `lfz-dev` environment terminal, navigate to your `lfz/` directory.
 2. Visit your fork of the `lfz-mod-2-lessons` repository on GitHub and copy its URL.
 3. Use `git clone` to clone your fork into your local `lfz` directory.
 

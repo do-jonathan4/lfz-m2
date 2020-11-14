@@ -7,7 +7,7 @@ When you have completed an exercise you'll want to send your solution to the ins
 
 To turn in your solution, you'll commit your changes, push them to GitHub, and submit a Pull Request. If you get stuck while committing or pushing your work, be sure to notify an instructor right away.
 
-1. In your terminal, navigate to **the root** of your `lfz-mod-2-lessons` directory. You can verify your current location with the `pwd` command. It should output something like:
+1. In your `lfz-dev` environment terminal, navigate to **the root** of your `lfz-mod-2-lessons` directory. You can verify your current location with the `pwd` command. It should output something like:
     ```bash
     /Users/your-username/lfz/lfz-mod-2-lessons
     ```
