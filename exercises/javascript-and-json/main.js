@@ -20,5 +20,6 @@ console.log('result: ', JSON.stringify(book1));
 console.log('type: ', typeof JSON.stringify(book1));
 
 var student = '{"id": 1234, "name": "John"}';
+
 console.log('result: ', JSON.parse(student));
 console.log('type: ', typeof JSON.parse(student));
