@@ -1,12 +1,11 @@
-/* global sinon */
-/* eslint-disable no-unused-vars */
+/* exported ban */
 
-function ban(object, ...methods) {
-  methods.forEach(method => {
-    sinon.stub(object, method).throws(
-      'No Cheating!',
-      `Do not use ${object.constructor.name}.prototype.${method} in your implementation!`
-    );
-  });
-  return object;
+function ban(fn) {
+  var methods = Array.prototype.slice.call(arguments, 1);
+  var banned = new RegExp(methods.map(function (method) {
+    return '\\.' + method;
+  }).join('|'), 'g');
+  if (banned.test(fn.toString())) {
+    throw new Error(`The following methods are banned for this problem: ${methods.join(', ')}`);
+  }
 }
