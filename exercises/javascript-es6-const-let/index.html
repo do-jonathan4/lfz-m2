@@ -9,7 +9,7 @@
 <body>
   <script>
     /* eslint-disable no-console, no-use-before-define */
-    var greetings = [
+    const greetings = [
       'hello!',
       'konichiwa!',
       'nihao',
@@ -19,7 +19,7 @@
     ];
 
     function helloWorld(arr) {
-      var i = 0;
+      let i = 0;
       while (i < arr.length) {
         console.log(arr[i]);
         i++;
@@ -28,8 +28,8 @@
     helloWorld(greetings);
 
     function getRandomGreeting() {
-      var randomNumber = Math.floor(Math.random() * greetings.length);
-      var greeting = greetings[randomNumber];
+      const randomNumber = Math.floor(Math.random() * greetings.length);
+      let greeting = greetings[randomNumber];
       if (randomNumber === 1) {
         greeting = greeting + ' is a japanese greeting.';
       }
@@ -43,9 +43,9 @@
     addToGreetings('namaste');
     helloWorld(greetings);
 
-    console.log('This variable is currently undefined due to hoisting, please fix: ', variable);
-
     var variable = 'meow';
+
+    console.log('This variable is currently undefined due to hoisting, please fix: ', variable);
   </script>
 </body>
 </html>
