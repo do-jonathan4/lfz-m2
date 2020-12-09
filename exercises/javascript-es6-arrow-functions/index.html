@@ -58,10 +58,10 @@
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
             this.say('Hey Flash...');
-            setTimeout(function () {
+            setTimeout(() => {
               this.say(formData.get('setup'));
               // eslint-disable-next-line space-before-blocks
-              setTimeout(function (){
+              setTimeout(() => {
                 this.say(formData.get('punchline'));
                 flash.respond();
               }, 2000);
@@ -78,7 +78,7 @@
         const flash = {
           laughingURL: 'images/flash-laugh.gif',
           respond: function () {
-            setTimeout(function () {
+            setTimeout(() => {
               document.querySelector('img').src = this.laughingURL;
             }, 3000);
           }
