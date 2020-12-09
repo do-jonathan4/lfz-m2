@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript-es6-destructuring</title>
+</head>
+<body>
+
+  <script>
+    var book1 = {
+      title: 'Goodnight Punpun',
+      author: 'Inio Asano',
+      libraryID: 3353
+    };
+
+    const {
+      title,
+      author,
+      libraryID
+    } = book1;
+
+    var sentence = `The title of the book is ${title}, the author is ${author} and the libary ID is ${libraryID}`;
+    console.log(sentence);
+
+    var book2 = {
+      title: 'Les Fleurs du mal',
+      author: 'Charles Baudelaire',
+      libraryID: 2345
+    };
+
+    const {
+      title: newtitle,
+      author: newauthor,
+      libraryID: newlibraryID
+    } = book2;
+
+    var sentence2 = `The title of the book is ${newtitle}, the author is ${newauthor} and the libary ID is ${newlibraryID}`;
+    console.log(sentence2);
+
+    const library = [
+      {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        libraryID: 1254
+      },
+      {
+        title: 'Walter Isaacson',
+        author: 'Steve Jobs',
+        libraryID: 4264
+      },
+      {
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        author: 'Suzanne Collins',
+        libraryID: 3245
+      },
+      {
+        title: "Dead Dead Demon's De De De De Destruction",
+        author: 'Inio Asano',
+        libraryID: 1233
+      }
+    ];
+
+    const [
+      book3,
+      book4,
+      book5
+    ] = library;
+
+    console.log(book3);
+    console.log(book4);
+    console.log(book5);
+  </script>
+</body>
+</html>
