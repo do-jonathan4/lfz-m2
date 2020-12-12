@@ -13,3 +13,14 @@ const names = [
   'Janese',
   'Donna'
 ];
+
+const evenNumbers = numbers.filter(num => num % 2 === 0 && num > 0);
+const overFive = numbers.filter(num => num > 5);
+
+const startWithE = names.filter(word => word.startsWith('E'));
+const haveD = names.filter(word => word.includes('D') || word.includes('d'));
+
+console.log('evenNumbers: ', evenNumbers);
+console.log('overFive: ', overFive);
+console.log('startWithE: ', startWithE);
+console.log('haveD: ', haveD);
