@@ -6,7 +6,6 @@ const add = require('./features/add');
 if (process.argv[2] === 'read') {
   read(data);
 }
-if (process.argv[2] === 'create') {
-  add(fileName, process.argv[3]);
-  read(data);
+if (process.argv[2] === 'add') {
+  add(data, fileName, process.argv[3]);
 }
