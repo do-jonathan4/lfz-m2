@@ -1,8 +1,9 @@
 {
-  "nextId": 6,
+  "nextId": 5,
   "notes": {
     "1": "I should buy a boat.",
     "2": "I should take a nap.",
-    "3": "take a nap"
+    "3": "take a nap",
+    "4": "keep coding"
   }
 }
