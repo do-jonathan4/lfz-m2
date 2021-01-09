@@ -13,7 +13,7 @@ app.post('/api/grades', (req, res) => {
   const obj = req.body;
   obj.id = nextId;
   grades.push(obj);
-  res.status(201).send(obj[nextId]);
+  res.status(201).send(obj);
   nextId++;
 });
 
