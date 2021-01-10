@@ -25,7 +25,6 @@ app.delete('/api/grades/:id', (req, res) => {
   const gradeID = parseInt(req.params.id);
   const removeArr = grades.findIndex(x => x.id === gradeID);
   grades.splice(removeArr, 1);
-  // console.log(gradeID);
   res.sendStatus(204);
 });
 
