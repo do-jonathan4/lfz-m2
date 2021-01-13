@@ -6,7 +6,17 @@ This lesson introduces the [PostgreSQL](https://www.postgresql.org/) (pronounced
 
 Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/postgres-intro` directory in your terminal.
 
+### Quiz
+
+After completing this exercise, you should be able to discuss or answer the following questions:
+
+- What is PostgreSQL and what are some alternative relational databases?
+- What are some advantages of learning a relational database?
+- What is one way to see if PostgreSQL is running?
+
 ### Introduction
+
+This lesson introduces the [PostgreSQL](https://www.postgresql.org/) (pronounced "Post Gress Queue El") relational database system. PostgreSQL v10 comes pre-installed in the LearningFuze development environment and this lesson assumes that you are running the latest version of the development environment.
 
 #### Why Databases?
 
@@ -18,7 +28,7 @@ PostgreSQL is a powerful, free, open source [Relational Database](https://en.wik
 
 #### Why a Relational Database?
 
-Not all databases are **relational** like PostgreSQL or the above mentioned. For example: [MongoDB](https://www.mongodb.com/) is a JSON document store, [Redis](https://redis.io/) is a key-value store, and [Neo4j](https://neo4j.com/) is a graph database. These non-relational databases, although vastly different from one another, are often categorized together under the term "NoSQL" (pronounced "No Sequel"). This simply means that you do not work with them using [the SQL language](https://en.wikipedia.org/wiki/SQL) (pronounced "Sequel" or "Ess Queue El"). **Relational** databases are commonly referred to as "SQL databases" because you usually _do_ work with them using some variation of the SQL language. You will learn more about SQL in the coming lessons.
+Not all databases are **relational** like PostgreSQL or the above mentioned. For example: [MongoDB](https://www.mongodb.com/) is a JSON document store, [Redis](https://redis.io/) is a key-value store, and [Neo4j](https://neo4j.com/neo4j-graph-database/) is a graph database. These non-relational databases, although vastly different from one another, are often categorized together under the term "NoSQL" (pronounced "No Sequel"). This simply means that you do not work with them using [the SQL language](https://en.wikipedia.org/wiki/SQL) (pronounced "Sequel" or "Ess Queue El"). **Relational** databases are commonly referred to as "SQL databases" because you usually _do_ work with them using some variation of the SQL language. You will learn more about SQL in the coming lessons.
 
 Many problem domains can be modeled well using a relational database. If you are storing related data, then a relational database is probably a good first choice! For example, you may be storing data about students, teachers, courses, and classrooms. You can imagine that there are relationships between these things. Teachers teach the courses, students enroll in the courses, and the courses are conducted in classrooms. Teachers can teach many courses and students can attend many courses.
 
@@ -39,7 +49,11 @@ Relational databases are arguably the most widely used kind of database. [SQLite
     ```bash
     sudo service postgresql stop
     ```
-1. Start the `postgresql` service again before continuing.
+1. Start the `postgresql` service again.
+1. Check the status of the `postgresql` service. You can do this anytime you want to see if Postgres is running.
+    ```bash
+    sudo service postgresql status
+    ```
 1. Quit `top` by pressing `q`.
 1. In the terminal that was running `top`, launch the [`pgweb`](https://github.com/sosedoff/pgweb) PostgreSQL database client by typing `pgweb` and pressing enter. You can stop `pgweb` at any time by pressing `Ctrl + C`.
 1. Visit `http://localhost:8081` in your web browser. The upper left corner of the UI should say `dev`.
@@ -50,14 +64,7 @@ Relational databases are arguably the most widely used kind of database. [SQLite
 1. Run the command again and output the results to a file. You'll be committing this file for this assignment.
     ```bash
     psql -c '\l' > list-of-databases.txt
-    ```
 
 ### Submitting Your Solution
 
 When your solution is complete, return to the root of your `lfz-mod-2-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
-
-### Quiz
-
-- What is PostgreSQL and what are some alternative relational databases?
-- What are some advantages of learning a relational database?
-- What is one way to see if PostgreSQL is running?
