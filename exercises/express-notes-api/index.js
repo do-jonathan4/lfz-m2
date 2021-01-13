@@ -6,7 +6,8 @@ app.get('/api/grades', (req, res) => {
   fs.readFile('./data.json', 'utf8', (err, data) => {
     if (err) throw err;
     const notesFile = JSON.parse(data);
-    res.json(notesFile.notes);
+    const notesArray = Object.values(notesFile.notes);
+    res.json(notesArray);
   });
 });
 
