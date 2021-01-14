@@ -1,14 +1,18 @@
 # sgt-back-end
 
-Building a simple JSON API.
+Building a simple JSON API, backed by a relational database.
 
 ### Before You Begin
 
 Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/sgt-back-end` directory in your terminal.
 
+### Tips!
+
+**There are a lot of tips in this exercise, including links that you should review, but a bunch at the end. Leave no stone unturned!**
+
 ### Challenge
 
-For this challenge you will be creating a small back end API using Node.js and PostgreSQL. Each endpoint that you make should be thoroughly tested with the HTTPie command line client.
+For this challenge you will be creating a small back end API using Node.js and PostgreSQL. Each route that you make should be thoroughly tested with the HTTPie command line client.
 
 Before you begin, be sure to create a new database named `studentGradeTable` from the command line like this:
 
@@ -45,43 +49,65 @@ const db = new pg.Pool({
 
 The above example should work fine, but here are links to the full documentation for [connecting to Postgres](https://node-postgres.com/features/connecting) and [connection pool objects](https://node-postgres.com/api/pool).
 
-You only need to create this object once at the top of your file. You can then use it in each of your Express.js endpoints. The most important part of the documentation is probably [how to send SQL queries to the database with the `query()` method](https://node-postgres.com/features/queries).
+You only need to create this object once at the top of your file. You can then use it in each of your [Express.js routes](https://expressjs.com/en/starter/basic-routing.html). The most important part of the documentation is probably [how to send SQL queries to the database with the `query()` method](https://node-postgres.com/features/queries).
 
-Once you've created a `pg.Pool`, you can [use its `query()` method](https://node-postgres.com/api/pool#pool.query) to send SQL to PostgreSQL and receive results.
+Once you've created a `pg.Pool`, you can [use its `query()` method](https://node-postgres.com/api/pool#pool.query) to send SQL queries to PostgreSQL and receive results.
 
-Here is an example endpoint for `GET`ing a `grade` by its `gradeId`.
+Here is an example route for `GET`ing a `grade` by its `gradeId`. Read through the code very slowly. You will be following this pattern fairly closely for many of your own routes.
 
 ```js
 app.get('/api/grades/:gradeId', (req, res, next) => {
-  const { gradeId } = req.params;
-  if (!parseInt(gradeId, 10)) {
-    return res.status(400).json({
+  // validate the "inputs" FIRST
+  const gradeId = parseInt(req.params.gradeId, 10);
+  if (!Number.isInteger(gradeId) || gradeId <= 0) {
+    // there is no way that a matching grade could be found
+    // so we immediately respond to the client and STOP the code
+    // with a return statement
+    res.status(400).json({
       error: '"gradeId" must be a positive integer'
     });
+    return;
   }
+  // Ok, the input is reasonable, time to query the database.
   const sql = `
     select *
       from "grades"
      where "gradeId" = $1
   `;
+  // 👆 We are NOT putting the user input directly into our query
   const params = [gradeId];
-  // review the documentation on parameterized queries here:
-  // https://node-postgres.com/features/queries#Parameterized%20query
+  // 👆 instead, we are sending the user input in a separate array
+  /**
+   * review the documentation on parameterized queries here:
+   * https://node-postgres.com/features/queries#parameterized-query
+   * you'll be using this information to prevent SQL injection attacks
+   *
+   * https://www.youtube.com/watch?v=_jKylhJtPmI
+   */
   db.query(sql, params)
     .then(result => {
       // the query succeeded, even if nothing was found
+      // the Result object will include an array of rows
+      // see the docs on results
+      // https://node-postgres.com/api/result
       const grade = result.rows[0];
       if (!grade) {
+        // we could not have known ahead of time without actually querying the db
+        // but the specific grade being requested was not found in the database
         res.status(404).json({
           error: `Cannot find grade with "gradeId" ${gradeId}`
         });
       } else {
+        // the specific grade was found in the database, yay!
         res.json(grade);
       }
     })
     .catch(err => {
       // the query failed for some reason
+      // possibly due to a syntax error in the SQL statement
+      // print the error to STDERR (the terminal) for debugging purposes
       console.error(err);
+      // respond to the client with a generic 500 error message
       res.status(500).json({
         error: 'An unexpected error occurred.'
       });
@@ -89,42 +115,43 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
 })
 ```
 
-You will be implementing the following endpoints:
+You will be implementing the following routes. Be sure to use appropriate [status codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). **You should include useful error messages in failure scenarios**. The error message should clearly communicate what went wrong. Imagine that you are trying to help the client do the right thing. See the example above.
 
-- `GET /api/grades` returns all grades from the `"grades"` table. The client should receive an array of objects.
+- `GET /api/grades` returns all rows from the `"grades"` table. The client should receive an array of objects. If there happens to be no rows, an empty array is ok.
 
     The result could be a `200` or a `500`.
-    - `200` The query may succeed
-    - `500` The query may fail
+    - `200` because the query may succeed
+    - `500` because the query may fail
 
 - `POST /api/grades` inserts a new grade into the `"grades"` table and returns the created grade. The client should receive an object, not an array.
     The result could be a `201`, `400`, or `500`.
-    - `201` The grade may be successfully inserted,
-    - `400` the client may supply an invalid `grade`,
-    - `500` or the query may fail.
+    - `201` because the grade was successfully inserted
+    - `400` because the client may supply an invalid `grade`, including a missing `name`, `course`, or `score`. Or the `score` isn't a number from `1` to `100`
+    - `500` or the query may fail
 
 - `PUT /api/grades/:gradeId` updates a grade in the `"grades"` table and returns the updated grade. The client should receive an object, not an array.
 
     The result could be a `200`, `400`, `404`, or `500`.
-    - `200` The grade may be successfully updated,
-    - `400` the client may supply an invalid `grade` or `gradeId`,
-    - `404` the target `grade` may not exist in the database,
-    - `500` or there may be an error querying the database.
+    - `200` because the grade may be successfully updated,
+    - `400` because the client may supply an invalid `gradeId` or invalid/missing `name`, `course`, or `score`
+    - `404` because the target `grade` may not exist in the database
+    - `500` or there may be an error querying the database
 
 - `DELETE /api/grades/:gradeId` deletes a grade from the `"grades"` table.
 
     The result could be a `204`, `400`, `404`, or `500`.
-    - `204` The grade may be successfully deleted,
-    - `400` the client may supply an invalid `gradeId`,
-    - `404` the target `grade` may not exist in the database,
+    - `204` because the grade may be successfully deleted
+    - `400` because the client may supply an invalid `gradeId`
+    - `404` because the target `grade` may not exist in the database
     - `500` or there may be an error querying the database.
 
-### Tips
+### The Tips!
 
-- Use [parameterized queries where necessary](https://node-postgres.com/features/queries#Parameterized%20query) to avoid [SQL Injection attacks!](https://www.youtube.com/watch?v=_jKylhJtPmI)
-- Use ES6 template strings for your SQL so that you can indent them for readability.
+- You can force database failures by sending malformed SQL queries to the database that reference non-existent tables/columns. `insert into "nose" ("object") values ('crayon')`.
+- Use [parameterized queries where necessary](https://node-postgres.com/features/queries#Parameterized%20query) to avoid [SQL Injection attacks!](https://www.youtube.com/watch?v=_jKylhJtPmI). 💀 **NEVER EVER just put user inputs directly into your query with string concatenation or template literals** 💀.
+- Use ES6 template strings for your SQL text so that you can indent it for readability.
 - Don't forget to add the `express.json()` middleware to parse JSON request bodies.
-- If the client successfully creates or updates a `grade`, then return them the _entire_ `grade` including any auto-generated values.
+- If the client successfully creates or updates a `grade` row, then return them the _entire_ `grade` row, including any auto-generated values.
 - No matter what happens, be sure to always respond to the client, even if there's an error querying the database.
 
 ### Submitting Your Solution
