@@ -6,6 +6,14 @@ Unlocking the power of relational databases by joining tables.
 
 Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/sql-join` directory in your terminal.
 
+### Quiz
+
+After completing this exercise, you should be able to discuss or answer the following questions:
+
+- What is a foreign key?
+- How do you join two SQL tables?
+- How do you temporarily rename columns or tables in a SQL statement?
+
 #### Foreign Keys Between Tables
 
 An SQL `join` clause is a way of combining data from two different database tables into one result set. Consider the following two tables:
@@ -28,7 +36,7 @@ An SQL `join` clause is a way of combining data from two different database tabl
 
 The data in this fictitious database has been split into two tables. One table is responsible for storing products, while the other stores information about suppliers of those products. This helps keep data organized so that updates can be made independently to either table. In general, splitting out database data into different tables is a good thing.
 
-Notice how each row in the `"products"` table has a `"supplierId"` column. That column specifically refers to values in the `"supplierId"` column of the `"suppliers"` table. This in known as a **foreign key**. Instead of putting _all_ of the supplier information for a product into the product row itself, there is instead just _one_ column that links the `"products"` table to the `"suppliers"` table.
+Notice how each row in the `"products"` table has a `"supplierId"` column. That column specifically refers to values in the `"supplierId"` column of the `"suppliers"` table. This is known as a **foreign key**. Instead of putting _all_ of the supplier information for a product into the product row itself, there is instead just _one_ column that links the `"products"` table to the `"suppliers"` table.
 
 #### Joining Tables
 
@@ -58,10 +66,10 @@ That is a lot of information! 🤔 And there's some weird stuff in here too. The
 
 Sometimes, a column's original name doesn't make sense for a desired result set. This can be for one of two reasons:
 
-1. The column has the same name as another table in the joined results.
+1. The column has the same name as another column in the joined results.
 1. The column name doesn't really communicate enough information about the data in the column outside of the context of the table.
 
-In order to address either of theses scenarios, we can **alias** column names. For example, if we want the product `"name"` and the supplier `"name"` to both appear in the same result set, we can do this:
+In order to address either of these scenarios, we can **alias** column names. For example, if we want the product `"name"` and the supplier `"name"` to both appear in the same result set, we can do this:
 
 ```sql
 select "products"."name" as "product",
@@ -114,7 +122,7 @@ select "p"."name" as "product",
 
 ### Exercise
 
-For this exercise, you will be authoring queries in individual `.sql` files in the exercise directory and then executing them against the `pagila` DVD Rental database. If you have not set up the `pagila` database, then you probably skipped the [`postgres-database`](../postgres-database) lesson.
+For this exercise, you will be authoring queries in individual `.sql` files in the exercise directory and then executing them against the `pagila` DVD Rental database. **These files are not provided; you have to make them yourself with your code editor.** If you have not set up the `pagila` database, then you probably skipped the `postgres-database` lesson.
 
 Before you can begin, it's important to confirm that the PostgreSQL database server is running. The status should be **`online`**. You can check with the following command:
 
@@ -163,9 +171,3 @@ psql -d pagila -f name-of-file.sql
 ### Submitting Your Solution
 
 When your solution is complete, return to the root of your `lfz-mod-2-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
-
-### Quiz
-
-- What is a foreign key?
-- How do you join two SQL tables?
-- How do you temporarily rename columns or tables in a SQL statement?
