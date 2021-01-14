@@ -6,6 +6,13 @@ Answering interesting questions about data using aggregate functions.
 
 Be sure to check out a new branch (from `master`) for this exercise. Detailed instructions can be found [**here**](../../guides/before-each-exercise.md). Then navigate to the `exercises/sql-aggregates` directory in your terminal.
 
+### Quiz
+
+After completing this exercise, you should be able to discuss or answer the following questions:
+
+- What are some examples of aggregate functions?
+- What is the purpose of a `group by` clause?
+
 #### Basic Syntax and Examples
 
 Sometimes it's useful to answer a question about a set of rows in a table or result set. Take our example `"products"` table (imagine there were many, many products in the table).
@@ -118,7 +125,7 @@ select "s"."name" as "supplier",
 
 ### Exercise
 
-For this exercise, you will be authoring queries in individual `.sql` files in the exercise directory and then executing them against the `pagila` DVD Rental database. If you have not set up the `pagila` database, then you probably skipped the [`postgres-database`](../postgres-database) lesson.
+For this exercise, you will be authoring queries in individual `.sql` files in the exercise directory and then executing them against the `pagila` DVD Rental database. **These files are not provided; you have to make them yourself with your code editor.** If you have not set up the `pagila` database, then you probably skipped the `postgres-database` lesson.
 
 Before you can begin, it's important to confirm that the PostgreSQL database server is running. The status should be **`online`**. You can check with the following command:
 
@@ -150,7 +157,7 @@ psql -d pagila -f name-of-file.sql
 
 1. `total-dvds.sql`
 
-    Find the total number of physical DVDs that the store keeps in `"inventory"`.
+    Find the total number of physical DVDs in `"inventory"`. This should include all DVDs in all stores.
 
 1. `on-the-map.sql`
 
@@ -164,15 +171,10 @@ psql -d pagila -f name-of-file.sql
 
     List the first and last name of all customers, plus the total amount they've spent on rentals. Order them by total paid, descending. Karl Seal should be first with $221.55 paid.
 
-1. `profit-margin.sql` (Bonus Challenge)
+1. `profit-margin.sql` (Optional Challenge)
 
-    List the 5 most profitable DVD titles in inventory. Profit is the amount of money made past the replacement cost.
+    List the 5 most profitable DVD titles in inventory. Profit is the amount of money made past the replacement cost. Don't forget, there are multiple copies of each film in inventory. You will likely benefit from first calculating the cost of each film and the revenue of each film in separate [common table expressions](https://www.postgresqltutorial.com/postgresql-cte/).
 
 ### Submitting Your Solution
 
 When your solution is complete, return to the root of your `lfz-mod-2-lessons` directory. Then commit your changes, push, and submit a Pull Request on GitHub. Detailed instructions can be found [**here**](../../guides/after-each-exercise.md).
-
-### Quiz
-
-- What are some examples of aggregate functions?
-- What is the purpose of a `group by` clause?
