@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 
+app.use(express.json());
+
 app.get('/api/grades', (req, res) => {
   fs.readFile('./data.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -14,8 +16,8 @@ app.get('/api/grades', (req, res) => {
 app.get('/api/grades/:id', (req, res) => {
   fs.readFile('./data.json', 'utf8', (err, data) => {
     if (err) throw err;
-    const notesID = parseInt(req.params.id);
     const notesFile = JSON.parse(data);
+    const notesID = parseInt(req.params.id);
     const notesArray = notesFile.notes[notesID];
 
     if (isNaN(notesID)) {
@@ -27,7 +29,31 @@ app.get('/api/grades/:id', (req, res) => {
     }
   });
 });
+app.post('/api/grades', (req, res) => {
+    fs.readFile('./data.json', 'utf8', (err, data) => {
+    if (err) throw err
+    const notesFile = JSON.parse(data);
+    const content = req.body
+
+    if (!content['content']) {
+      res.status(400).json({ error: 'content is a required field' })
+    } else {
+      content.id = notesFile.nextId
+      notesFile.notes[notesFile.nextId] = content
+      notesFile.nextId++
+      const newNotes = JSON.stringify(notesFile, null, 2)
+
+      fs.writeFile('./data.json', newNotes, 'utf8', err => {
+        if (err) {
+          res.status(500).json({ error: 'unexpected error occured' })
+        };
+        res.status(201).send(content)
+      });
+    }
+
+  })
+})
 
 app.listen(3000, () => {
-  console.log('Listening on port 3000!');
-});
+  console.log('listening to port 3000')
+})
