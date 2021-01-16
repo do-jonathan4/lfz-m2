@@ -53,7 +53,30 @@ app.post('/api/grades', (req, res) => {
 
   })
 })
+app.delete('/api/grades/:id', (req, res) => {
+  fs.readFile('./data.json', 'utf8', (err, data) => {
+    if (err) throw err;
+    const notesFile = JSON.parse(data);
+    const notesID = parseInt(req.params.id);
+
+    if (isNaN(notesID)) {
+      res.status(400).json({ error: 'id must be a positive integer' });
+    } else if (!notesFile.notes.hasOwnProperty(notesID)) {
+      res.status(404).json({ error: `cannot find note with id ${notesID}` });
+    } else {
+      delete notesFile.notes[notesID]
+      const newNotes = JSON.stringify(notesFile, null, 2)
+
+      fs.writeFile('./data.json', newNotes, 'utf8', err => {
+        if (err) {
+          res.status(500).json({ error: 'unexpected error occured' })
+        };
+        res.sendStatus(204)
+      });
+    }
+  })
+})
 
 app.listen(3000, () => {
-  console.log('listening to port 3000')
+  console.log('Listening to port 3000!')
 })
