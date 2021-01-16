@@ -91,6 +91,8 @@ app.put('/api/grades/:id', (req, res) => {
       res.status(404).json({ error: `cannot find note with id ${notesID}` });
     } else {
       notesFile.notes[notesID] = content
+      content.id = notesID
+
       const newNotes = JSON.stringify(notesFile, null, 2)
 
       fs.writeFile('./data.json', newNotes, 'utf8', err => {
