@@ -1,6 +1,5 @@
 select "releaseYear",
-       "categories"."name",
-       "title"
+       "categories"."name"
   from "films"
   join "filmCategory" using ("filmId")
   join "categories" using ("categoryId")
