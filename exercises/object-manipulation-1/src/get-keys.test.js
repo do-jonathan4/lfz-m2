@@ -1,9 +1,10 @@
-/* global expect, getKeys */
+/* global expect, getKeys, banMethods */
 
 describe('getKeys(object)', function () {
 
   beforeEach(function () {
     expect(getKeys).to.be.a('function');
+    banMethods(getKeys, 'keys', 'entries', 'getOwnPropertyNames');
   });
 
   it('returns Dave\'s property keys', function () {

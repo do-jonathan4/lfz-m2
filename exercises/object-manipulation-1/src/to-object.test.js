@@ -1,9 +1,10 @@
-/* global expect, toObject */
+/* global expect, toObject, banMethods */
 
 describe('toObject(keyValuePair)', function () {
 
   beforeEach(function () {
     expect(toObject).to.be.a('function');
+    banMethods(toObject, 'fromEntries');
   });
 
   it('creates a Dave object', function () {
