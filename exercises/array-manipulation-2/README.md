@@ -15,13 +15,13 @@ Your goal is to define each function according to its description, such that all
 Begin by skimming through `index.html` in your code editor, then opening it in your web browser. You should see **`ReferenceError: ... is not defined`** a few times on the page.
 
 <p align="middle">
-  <img src="images/failing-tests.png" alt="failing-tests">
+  <img src="assets/failing-tests.png" alt="failing-tests">
 </p>
 
 Open `src/take.js` and `src/take.test.js` in your code editor and skim the code in `take.test.js`. As you add to or modify `take.js`, reload `index.html` in your browser to receive feedback. Work through defining each function specified below until all unit tests pass.
 
 <p align="middle">
-  <img src="images/passing-tests.png" alt="passing-tests">
+  <img src="assets/passing-tests.png" alt="passing-tests">
 </p>
 
 1. ### `take(array, count)`
@@ -177,7 +177,7 @@ Open `src/take.js` and `src/take.test.js` in your code editor and skim the code 
 
     A new `Array` of `Arrays`. Each sub-`Array` has a length equal to `size`. Remainder elements are gathered into a final sub-`Array`.
 
-    #### CHALLENGE
+    #### OPTIONAL CHALLENGE
 
     **Do not use `Array.prototype.slice` in your implementation.**
 

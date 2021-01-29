@@ -1,6 +1,6 @@
-/* exported ban */
+/* exported banMethods */
 
-function ban(fn) {
+function banMethods(fn) {
   var methods = Array.prototype.slice.call(arguments, 1);
   var banned = new RegExp(methods.map(function (method) {
     return '\\.' + method;
