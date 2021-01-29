@@ -29,8 +29,10 @@ describe('pick(source, keys)', function () {
         { foo: null, bar: 0 }
       ]
     ];
-    for (let i = 0; i < testCases.length; i++) {
-      var [source, keys, expected] = testCases[i];
+    for (var i = 0; i < testCases.length; i++) {
+      var source = testCases[i][0];
+      var keys = testCases[i][1];
+      var expected = testCases[i][2];
       var frozen = Object.freeze(source);
       var actual = pick(frozen, keys);
       expect(actual).to.deep.equal(expected);

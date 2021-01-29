@@ -20,8 +20,6 @@ Open `src/pick.js` and `src/pick.test.js` in your code editor and skim the code 
 
     Creates an object composed of the picked `source` properties.
 
-    #### 🚨 Constraints 🚨
-
     #### Parameters
 
       - `source` - Any JavaScript `Object`
@@ -140,8 +138,6 @@ Open `src/pick.js` and `src/pick.test.js` in your code editor and skim the code 
     defaults(target, source);
     console.log(target) // -> { foo: 1, baz: 3 }
     ```
-
-
 
 ### Submitting Your Solution
 
