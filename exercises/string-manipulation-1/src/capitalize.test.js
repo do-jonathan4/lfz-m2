@@ -1,6 +1,6 @@
 /* global expect, capitalize */
 
-describe('capitalize(string)', function () {
+describe('capitalize(word)', function () {
 
   beforeEach(function () {
     expect(capitalize).to.be.a('function');
@@ -34,6 +34,30 @@ describe('capitalize(string)', function () {
     var input = 'pAsT';
     var output = capitalize(input);
     expect(output).to.equal('Past');
+  });
+
+  it('returns "Hookshot" for "hookshot"', function () {
+    var input = 'hookshot';
+    var output = capitalize(input);
+    expect(output).to.equal('Hookshot');
+  });
+
+  it('returns "Bow" for "bow"', function () {
+    var input = 'bow';
+    var output = capitalize(input);
+    expect(output).to.equal('Bow');
+  });
+
+  it('returns "Bombs" for "bombs"', function () {
+    var input = 'bombs';
+    var output = capitalize(input);
+    expect(output).to.equal('Bombs');
+  });
+
+  it('returns "Sword" for "sword"', function () {
+    var input = 'sword';
+    var output = capitalize(input);
+    expect(output).to.equal('Sword');
   });
 
 });

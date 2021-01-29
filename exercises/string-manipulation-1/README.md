@@ -17,7 +17,7 @@ Your goal is to define each function according to its description, such that all
 Begin by skimming through `index.html` in your code editor, then opening it in your web browser. You should see **`ReferenceError: ... is not defined`** a few times on the page.
 
 <p align="middle">
-  <img src="images/failing-tests.png" alt="failing-tests">
+  <img src="assets/failing-tests.png" alt="failing-tests">
 </p>
 
 Open `src/get-first-char.js` and `src/get-first-char.test.js` in your code editor and skim the code in `get-first-char.test.js`. As you add to or modify `get-first-char.js`, reload `index.html` in your browser to receive feedback. Work through defining each function specified below until all unit tests pass.
@@ -59,11 +59,11 @@ Then, following the specifications below, complete each of the functions defined
     #### Examples
 
     ```js
-    getFirstChar('LearningFuze') // -> "e"
-    getFirstChar('paschal')      // -> "l"
-    getFirstChar('HTML')         // -> "L"
-    getFirstChar('code')         // -> "e"
-    getFirstChar('String')       // -> "g"
+    getLastChar('LearningFuze') // -> "e"
+    getLastChar('paschal')      // -> "l"
+    getLastChar('HTML')         // -> "L"
+    getLastChar('code')         // -> "e"
+    getLastChar('String')       // -> "g"
     ```
 
 1. ### `capitalize(word)`
@@ -176,7 +176,7 @@ Then, following the specifications below, complete each of the functions defined
 
 1. ### `reverseWord(word)`
 
-    #### EXTRA - Do not use [`String.prototype.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to complete this function.
+    🚨 **Do not use `String.prototype.split` for this problem.** 🚨
 
     #### Parameters
 
