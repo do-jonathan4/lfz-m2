@@ -36,28 +36,25 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/7.4.2/sinon.js"></script>
   <script>
-    /* global chai, mocha */
-    /* eslint-disable-next-line no-unused-vars */
+    /* exported expect */
     var expect = chai.expect;
     mocha.setup('bdd');
   </script>
-  <script src="src/ban.js"></script>
+  <script src="src/ban-methods.js"></script>
   <script src="src/head.js"></script>
   <script src="src/head.test.js"></script>
   <script src="src/last.js"></script>
   <script src="src/last.test.js"></script>
-  <script src="src/initial.js"></script>
-  <script src="src/initial.test.js"></script>
   <script src="src/tail.js"></script>
   <script src="src/tail.test.js"></script>
+  <script src="src/initial.js"></script>
+  <script src="src/initial.test.js"></script>
   <script src="src/reverse.js"></script>
   <script src="src/reverse.test.js"></script>
   <script src="src/compact.js"></script>
   <script src="src/compact.test.js"></script>
   <script>
-    /* global mocha */
     mocha.run();
   </script>
 </body>

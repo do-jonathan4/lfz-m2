@@ -1,10 +1,10 @@
-/* global expect, ban, tail */
+/* global expect, banMethods, tail */
 
 describe('tail(array)', function () {
 
   beforeEach(function () {
     expect(tail).to.be.a('function');
-    ban(tail, 'slice', 'splice', 'pop', 'shift');
+    banMethods(tail, 'slice', 'splice', 'pop', 'shift');
   });
 
   it('returns the last two values of ["foo", "bar", "baz"]', function () {

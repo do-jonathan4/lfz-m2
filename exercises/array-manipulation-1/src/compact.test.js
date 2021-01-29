@@ -1,9 +1,10 @@
-/* global expect, compact */
+/* global expect, banMethods, compact */
 
 describe('compact(array)', function () {
 
   beforeEach(function () {
     expect(compact).to.be.a('function');
+    banMethods(compact, 'slice', 'splice', 'pop', 'shift', 'filter');
   });
 
   it('omits false from arrays', function () {

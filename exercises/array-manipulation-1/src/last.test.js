@@ -1,10 +1,10 @@
-/* global expect, ban, last */
+/* global expect, banMethods, last */
 
 describe('last(array)', function () {
 
   beforeEach(function () {
     expect(last).to.be.a('function');
-    ban(last, 'slice', 'splice', 'pop', 'shift');
+    banMethods(last, 'slice', 'splice', 'pop', 'shift', 'filter');
   });
 
   it('returns "baz" for ["foo", "bar", "baz"]', function () {
