@@ -29,10 +29,17 @@ const putGrades = `
     returning *
   `;
 
+const deleteGrades = `
+    delete from "grades"
+    where "gradeId" = $1
+    returning *
+  `;
+
 module.exports = {
   db,
   getGrades,
   getGradeById,
   postGrades,
-  putGrades
+  putGrades,
+  deleteGrades
 };
