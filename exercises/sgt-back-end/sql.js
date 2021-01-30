@@ -17,11 +17,22 @@ const getGradeById = `
 const postGrades = `
     insert into "grades" ("name", "course", "score")
     values ($1, $2, $3)
+    returning *
+  `;
+
+const putGrades = `
+    update "grades"
+    set "name" = $1,
+        "course" = $2,
+        "score" = $3
+    where "gradeId" = $4
+    returning *
   `;
 
 module.exports = {
   db,
   getGrades,
   getGradeById,
-  postGrades
+  postGrades,
+  putGrades
 };
