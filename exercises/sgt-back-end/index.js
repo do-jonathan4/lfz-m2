@@ -1,21 +1,18 @@
-const pg = require('pg');
 const express = require('express');
 
 const app = express();
 app.use(express.json());
 
 const {
+  db,
   getGrades,
-  getGradeById
+  getGradeById,
+  postGrades
 } = require('./sql.js');
-
-const db = new pg.Pool({
-  connectionString: 'postgres://dev:lfz@localhost/studentGradeTable'
-});
 
 app.get('/api/grades/', (req, res, next) => {
   db.query(getGrades)
-    .then(result => { res.json(result.rows); })
+    .then(result => { res.status(200).json(result.rows); })
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'An unexpected error occurred.' });
@@ -35,8 +32,30 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
       if (!grade) {
         res.status(404).json({ error: `Cannot find grade with "gradeId" ${gradeId}` });
       } else {
-        res.json(grade);
+        res.status(200).json(grade);
       }
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({ error: 'An unexpected error occurred.' });
+    });
+});
+
+app.post('/api/grades/', (req, res, next) => {
+  const { name, course, score } = req.body;
+  if (!name || !course || !score) {
+    res.status(400).json({ error: 'Please inclue all the required fields' });
+    return;
+  } else if (!Number.isInteger(parseInt(score)) || parseInt(score) <= 0) {
+    res.status(400).json({ error: 'Score must be a positive integer' });
+    return;
+  }
+
+  const newGrade = [name, course, score];
+  db.query(postGrades, newGrade)
+    .then(result => {
+      const grade = result.rows[0];
+      res.status(201).json(grade);
     })
     .catch(err => {
       console.error(err);
