@@ -35,4 +35,5 @@ describe('isUpperCased(word)', function () {
     var output = isUpperCased(input);
     expect(output).to.equal(true);
   });
+
 });

@@ -15,13 +15,13 @@ Your goal is to define each function according to its description, such that all
 Begin by skimming through `index.html` in your code editor, then opening it in your web browser. You should see **`ReferenceError: ... is not defined`** a few times on the page.
 
 <p align="middle">
-  <img src="images/failing-tests.png" alt="failing-tests">
+  <img src="assets/failing-tests.png" alt="failing-tests">
 </p>
 
 Open `src/equal.js` and `src/equal.test.js` in your code editor and skim the code in `equal.test.js`. As you add to or modify `equal.js`, reload `index.html` in your browser to receive feedback. Work through defining each function specified below until all unit tests pass.
 
 <p align="middle">
-  <img src="images/passing-tests.png" alt="passing-tests">
+  <img src="assets/passing-tests.png" alt="passing-tests">
 </p>
 
 1. ### `equal(first, second)`
@@ -207,7 +207,6 @@ Open `src/equal.js` and `src/equal.test.js` in your code editor and skim the cod
     )
     // -> ["a", "link", "to", "the", "past", "adventure", "of"]
     ```
-
 
 ### Submitting Your Solution
 

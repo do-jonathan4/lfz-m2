@@ -1,10 +1,10 @@
-/* global expect, ban, reverse */
+/* global expect, banMethods, reverse */
 
 describe('reverse(array)', function () {
 
   beforeEach(function () {
     expect(reverse).to.be.a('function');
-    ban(reverse, 'reverse');
+    banMethods(reverse, 'reverse');
   });
 
   it('returns ["foo", "bar", "baz"] in reverse', function () {

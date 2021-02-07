@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
-function getValues(object) {
-  return Object.values(object);
+/* exported getValue */
+function getValue(object, key) {
+  return object[key];
 }

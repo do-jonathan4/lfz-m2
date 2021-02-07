@@ -36,13 +36,12 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/6.2.0/mocha.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/7.4.2/sinon.js"></script>
   <script>
-    /* global chai, mocha */
-    /* eslint-disable-next-line no-unused-vars */
+    /* exported expect */
     var expect = chai.expect;
     mocha.setup('bdd');
   </script>
+  <script src="src/ban-methods.js"></script>
   <script src="src/get-first-char.js"></script>
   <script src="src/get-first-char.test.js"></script>
   <script src="src/get-last-char.js"></script>
@@ -60,7 +59,6 @@
   <script src="src/reverse-word.js"></script>
   <script src="src/reverse-word.test.js"></script>
   <script>
-    /* global mocha */
     mocha.run();
   </script>
 </body>

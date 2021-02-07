@@ -15,13 +15,13 @@ Your goal is to define each function according to its description, such that all
 Begin by skimming through `index.html` in your code editor, then opening it in your web browser. You should see **`ReferenceError: ... is not defined`** a few times on the page.
 
 <p align="middle">
-  <img src="images/failing-tests.png" alt="failing-tests">
+  <img src="assets/failing-tests.png" alt="failing-tests">
 </p>
 
 Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim the code in `get-value.test.js`. As you add to or modify `get-value.js`, reload `index.html` in your browser to receive feedback. Work through defining each function specified below until all unit tests pass.
 
 <p align="middle">
-  <img src="images/passing-tests.png" alt="passing-tests">
+  <img src="assets/passing-tests.png" alt="passing-tests">
 </p>
 
 1. ### `getValue(object, key)`
@@ -38,15 +38,15 @@ Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim
     #### Examples
 
       ```js
-      var dave = { firstName: 'David', lastName: 'Thomas' }
+      const dave = { firstName: 'David', lastName: 'Thomas' }
       getValue(dave, 'firstName'); // -> "David"
       getValue(dave, 'lastName'); // -> "Thomas"
 
-      var learningFuze = { latitude: 33.6349, longitude: 117.7405 }
+      const learningFuze = { latitude: 33.6349, longitude: 117.7405 }
       getValue(learningFuze, 'latitude'); // -> 33.6349
       getValue(learningFuze, 'longitude'); // -> 117.7405
 
-      var tim = { name: 'Tim', language: 'JavaScript' }
+      const tim = { name: 'Tim', language: 'JavaScript' }
       getValue(tim, 'age'); // -> undefined
       getValue(tim, 'yearsExperience'); // -> undefined
       ```
@@ -66,20 +66,20 @@ Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim
     #### Examples
 
     ```js
-    var dave = { firstName: 'David' };
+    const dave = { firstName: 'David' };
     setValue(dave, 'lastName', 'Thomas');
     console.log(dave); // { firstName: "David", lastName: "Thomas" }
 
-    var learningFuze = { latitude: 33.6349 };
+    const learningFuze = { latitude: 33.6349 };
     setValue(learningFuze, 'attitude', 'sanguine');
     console.log(learningFuze); // { latitude: 33.6349, attitude: "sanguine" }
 
-    var tim = { name: 'Tim', language: 'JavaScript' };
+    const tim = { name: 'Tim', language: 'JavaScript' };
     setValue(tim, 'language', 'PHP');
     console.log(tim); // { name: "Tim", language: "PHP" }
     ```
 
-1. ### `getKeys(object)` 🚨
+1. ### `getKeys(object)`
 
     **🚨 Do not use `Object.keys` in your implementation of `getKeys()`.**
 
@@ -94,26 +94,26 @@ Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim
     #### Examples
 
     ```js
-    var dave = {
+    const dave = {
       firstName: 'David',
       lastName: 'Thomas'
     };
     getKeys(dave); // -> ["firstName", "lastName"]
 
-    var learningfuze = {
+    const learningfuze = {
       latitude: 33.6349,
       attitude: 'sanguine',
       longitude: 117.7405
     }
     getKeys(learningFuze); // -> ["latitude", "attitude", "longitude"]
 
-    var tim = {}
+    const tim = {}
     getKeys(tim); // -> []
     ```
 
-1. ### `getValues(object)` 🚨
+1. ### `getValues(object)`
 
-    ** 🚨 Do not use `Object.values` in your implementation of `getValues()`.**
+    **🚨 Do not use `Object.values` in your implementation of `getValues()`.**
 
     #### Parameters
 
@@ -126,20 +126,20 @@ Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim
     #### Examples
 
     ```js
-    var dave = {
+    const dave = {
       firstName: 'David',
       lastName: 'Thomas'
     };
     getValues(dave); // -> ["David", "Thomas"]
 
-    var learningfuze = {
+    const learningfuze = {
       latitude: 33.6349,
       attitude: 'sanguine',
       longitude: 117.7405
     }
     getValues(learningFuze); // -> [33.6349, "sanguine", 117.7405]
 
-    var tim = {}
+    const tim = {}
     getValues(tim); // -> []
     ```
 
@@ -151,7 +151,7 @@ Open `src/get-value.js` and `src/get-value.test.js` in your code editor and skim
 
     #### Return Value
 
-      - And `Object` with one property consisting of the passed `keyValuePair`.
+      - An `Object` with one property consisting of the passed `keyValuePair`.
 
     #### Examples
 

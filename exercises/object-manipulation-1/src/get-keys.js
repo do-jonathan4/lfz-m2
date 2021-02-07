@@ -1,4 +1,8 @@
-/* eslint-disable no-unused-vars */
+/* exported getKeys */
 function getKeys(object) {
-  return Object.keys(object);
+  var newArray = [];
+  for (var prop in object) {
+    newArray.push(prop);
+  }
+  return newArray;
 }

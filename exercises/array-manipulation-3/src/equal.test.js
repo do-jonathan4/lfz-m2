@@ -42,6 +42,18 @@ describe('equal(first, second)', function () {
 
   });
 
+  context('[1, 2, 3, 4, 5] and [1, 2, 3, 4, 5, 6]', function () {
+
+    it('returns false', function () {
+      var output = equal(
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4, 5, 6]
+      );
+      expect(output).to.equal(false);
+    });
+
+  });
+
   context('[1, 2, 3, 4, 5] and [1, 2, 3, 3, 5]', function () {
 
     it('returns false', function () {
@@ -66,7 +78,7 @@ describe('equal(first, second)', function () {
 
   });
 
-  context('[false, true, false, true] and [false, true, false, true]', function () {
+  context('[false, true, false, true] and [true, false, true, false]', function () {
 
     it('returns false', function () {
       var output = equal(
@@ -84,6 +96,18 @@ describe('equal(first, second)', function () {
       var output = equal(
         [false, true, false, true],
         [true, false, true, false]
+      );
+      expect(output).to.equal(false);
+    });
+
+  });
+
+  context('[{foo: "bar"}, {baz: "qux"}] and [{foo: "qux"}, {baz: "bar"}]', function () {
+
+    it('returns false', function () {
+      var output = equal(
+        [{ foo: 'bar' }, { baz: 'qux' }],
+        [{ foo: 'qux' }, { baz: 'bar' }]
       );
       expect(output).to.equal(false);
     });

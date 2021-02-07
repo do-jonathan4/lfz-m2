@@ -1,10 +1,10 @@
-/* global expect, ban, initial */
+/* global expect, banMethods, initial */
 
 describe('initial(array)', function () {
 
   beforeEach(function () {
     expect(initial).to.be.a('function');
-    ban(initial, 'slice', 'splice', 'pop', 'shift');
+    banMethods(initial, 'splice', 'slice');
   });
 
   it('returns the first two values of ["foo", "bar", "baz"]', function () {

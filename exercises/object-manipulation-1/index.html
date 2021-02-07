@@ -38,11 +38,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.2.0/chai.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/7.4.2/sinon.js"></script>
   <script>
-    /* global chai, mocha */
-    /* eslint-disable-next-line no-unused-vars */
+    /* exported expect */
     var expect = chai.expect;
     mocha.setup('bdd');
   </script>
+  <script src="src/ban-methods.js"></script>
   <script src="src/get-value.js"></script>
   <script src="src/get-value.test.js"></script>
   <script src="src/set-value.js"></script>
@@ -54,7 +54,6 @@
   <script src="src/to-object.js"></script>
   <script src="src/to-object.test.js"></script>
   <script>
-    /* global mocha */
     mocha.run();
   </script>
 </body>

@@ -1,10 +1,10 @@
-/* global expect, ban, head */
+/* global expect, banMethods, head */
 
 describe('head(array)', function () {
 
   beforeEach(function () {
     expect(head).to.be.a('function');
-    ban(head, 'slice', 'splice', 'pop', 'shift');
+    banMethods(head, 'slice', 'splice', 'pop', 'shift', 'filter');
   });
 
   it('returns "foo" for ["foo", "bar", "baz"]', function () {
