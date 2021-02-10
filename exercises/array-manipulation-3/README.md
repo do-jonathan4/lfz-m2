@@ -123,13 +123,13 @@ Open `src/equal.js` and `src/equal.test.js` in your code editor and skim the cod
     #### Examples
 
     ```js
-    unque(['foo', 'bar', 'baz', 'qux', 'bar', 'qux', 'corge', 'baz']);
+    unique(['foo', 'bar', 'baz', 'qux', 'bar', 'qux', 'corge', 'baz']);
     // -> ["foo", "bar", "baz", "qux", "corge"]
-    unque([1, 3, 3, 2, 5, 2, 1, 4, 5, 5]);
+    unique([1, 3, 3, 2, 5, 2, 1, 4, 5, 5]);
     // -> [1, 3, 2, 5, 4]
     unique([false, true, false, true]);
     // -> [false, true]
-    unque([]);
+    unique([]);
     // -> []
       ```
 
